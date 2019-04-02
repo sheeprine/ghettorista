@@ -9,15 +9,15 @@ It can be used to fine tune boiler temperature and operation with a PID.
 
 #### Common features ####
 
-- [ ] Detection of pump operation
+- [x] Detection of pump operation
 - [ ] Trigger pump operation (cooling flush)
-- [ ] Stopwatch for cooling and extraction monitoring
+- [x] Stopwatch for cooling and extraction monitoring
 - [ ] Data export to time series database or mqtt
 
 #### HX related features ####
 
-- [ ] Temperature monitoring of group head
-- [ ] Temperature offsetting to estimate water flow temperature
+- [x] Temperature monitoring of group head
+- [x] Temperature offsetting to estimate water flow temperature
 
 #### Single Boiler/Rossi related features ####
 
