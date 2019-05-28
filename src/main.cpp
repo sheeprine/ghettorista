@@ -21,7 +21,7 @@ GhettoBarista state;
 Display *display;
 
 #ifdef USE_CELSIUS
-  double readGHTemp() { return TC_GROUPHEAD.readCelsius(); }
+  double readGHTemp() { return TC_GROUPHEAD.readCelsius() - 7; }
 #else
   double readGHTemp() { return TC_GROUPHEAD.readFahrenheit(); }
 #endif
@@ -35,7 +35,7 @@ void updatePumpState() {
 }
 
 void setup() {
-  attachInterrupt(digitalPinToInterrupt(PUMP_SENSE_PIN), updatePumpState, CHANGE);
+  //attachInterrupt(digitalPinToInterrupt(PUMP_SENSE_PIN), updatePumpState, CHANGE);
   SPI.begin();
   TC_GROUPHEAD.begin(TC_GROUPHEAD_PIN);
   lcd.init();
@@ -51,6 +51,6 @@ void loop() {
   state.setGroupHeadTemp(readGHTemp());
   state.refresh();
   display->updateDisplayState(&state);
-  display->printState();
-  delay(100);
+  display->commitDisplay();
+  delay(300);
 }

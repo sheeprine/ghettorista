@@ -25,6 +25,6 @@ limitations under the License.
 #include "display.h"
 
 #define TC_GROUPHEAD_PIN D0
-#define PUMP_SENSE_PIN D1
-#define PUMP_START_PIN D2
+//#define PUMP_SENSE_PIN D1
+//#define PUMP_START_PIN D2
 #define USE_CELSIUS 1
